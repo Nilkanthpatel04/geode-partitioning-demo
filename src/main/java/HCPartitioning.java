@@ -1,7 +1,9 @@
+/***
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.config.Config;
 import com.hazelcast.core.*;
+***/
 import model.Customer;
 import model.Order;
 
@@ -17,6 +19,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class HCPartitioning {
   public static void main(String[] args){
+    /****
     Config config = new Config();
     //HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
     ClientConfig clientConfig = new ClientConfig();
@@ -26,13 +29,14 @@ public class HCPartitioning {
     //connect to hazelcast instance
     HazelcastInstance client = HazelcastClient.newHazelcastClient(clientConfig);
     IMap<Customer, Order> mapCustomers = client.getMap("customers"); //creates the map proxy
+    */
 
-    /*
+    /***
     mapCustomers.put(new Customer("Rahul", "303, Park avenue, sector-30, new delhi"), new Order("1", Arrays.asList("item-1", "item-2", "item-3")));
     mapCustomers.put(new Customer("Nilkanth", "A-703, Nandan Euphora, Pune"), new Order("1", Arrays.asList("item-7", "item-8", "item-9")));
     */
 
-    /*
+    /***
     ConcurrentMap<String, String> map = h.getMap("my-distributed-map");
 
     Set<Member> members = h.getCluster().getMembers();

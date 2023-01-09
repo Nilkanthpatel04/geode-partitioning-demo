@@ -10,7 +10,7 @@ import org.apache.geode.distributed.internal.ServerLocation;
 import org.apache.geode.internal.cache.BucketRegion;
 import org.apache.geode.internal.cache.BucketServerLocation66;
 import org.apache.geode.internal.cache.PartitionedRegion;
-import org.apache.geode.internal.logging.LogService;
+//import org.apache.geode.internal.logging.LogService;
 import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
@@ -22,7 +22,7 @@ import java.util.*;
  * Created by: Nilkanth Patel
  */
 public class BucketMetadataFunction implements Function, Serializable {
-  private static final Logger logger = LogService.getLogger();
+  //private static final Logger logger = LogService.getLogger();
 
   private static final long serialVersionUID = -3150906692851375834L;
 
@@ -36,7 +36,7 @@ public class BucketMetadataFunction implements Function, Serializable {
 
     Region region = cache.getRegion(regionName);
     if (region == null) {
-      logger.info("BucketMetadataFunction: Region does not exist: {}", regionName);
+      System.out.println("BucketMetadataFunction: Region does not exist:" + regionName);
       Map<Integer, Pair<ServerLocation, Long>> primaryMap = Collections.emptyMap();
       Map<Integer, Pair<ServerLocation, Long>> secondaryMap = Collections.emptyMap();
       fc.getResultSender().lastResult(new Object[] { primaryMap, secondaryMap });
